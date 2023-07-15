@@ -1,0 +1,555 @@
+/*Fuente "Londrina Shadow" para titulo principal */
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Kablammo&family=Londrina+Shadow&family=The+Nautigal:wght@700&display=swap");
+/* Fuente "Rajdhani" para body */
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Raleway:wght@300;500&family=Roboto:wght@300;500;700&family=Rubik+Dirt&family=Russo+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: whitesmoke;
+  font-family: "Rajdhani";
+}
+/* Grilla principal para el diseño del layout responsiva para mobil, tablet y despokt */
+main {
+  margin: 0 auto;
+  max-width: 1600px;
+  min-height: 100vh;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 100%;
+  grid-template-rows:
+    55px
+    300px
+    1fr
+    0.2fr
+    200px;
+  grid-template-areas:
+    "my-nav my-nav my-nav"
+    "my-header my-header my-header"
+    "my-section my-section my-section"
+    "my-aside my-aside my-aside"
+    "my-footer my-footer my-footer";
+}
+/* paleta de colores para la página */
+header {
+  grid-area: my-header;
+  background-color: #dbeffe;
+}
+
+nav {
+  grid-area: my-nav;
+  background-color: #1465bb;
+}
+
+aside {
+  grid-area: my-aside;
+  background-color: #2196f3;
+}
+
+section {
+  grid-area: my-section;
+  background-color: #dbeffe;
+}
+
+footer {
+  grid-area: my-footer;
+  background-color: #b9ffff;
+}
+
+/* Grilla para la seccion Header, lo pude hacer con display flex, pero lo utilice para practicar*/
+header {
+  max-width: 1600px;
+  max-height: 299px;
+  display: grid;
+  row-gap: 3px;
+  grid-template-columns: 100%;
+  grid-template-rows:
+    22px
+    60px
+    1fr;
+  grid-template-areas:
+    "h1"
+    "h2"
+    "h3";
+}
+.header1 {
+  text-align: center;
+  grid-template-areas: h1;
+  background-color: #003785;
+  color: white;
+}
+.header2 {
+  grid-template-areas: h2;
+  background-color: whitesmoke;
+}
+.header3 {
+  grid-template-areas: h3;
+  background-image: url("../imgs/barnner.png");
+  background-size: cover;
+}
+
+.header2 {
+  display: flex;
+  font-family: "Londrina Shadow";
+  justify-content: center;
+  font-size: 26px;
+}
+.logo {
+  animation-name: logo;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Aqui comienza ccs para el Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+}
+.logo-nav {
+  padding-top: 10px;
+  display: flex;
+  font-family: "Londrina Shadow";
+  color: white;
+  font-size: 2.5rem;
+}
+.logo-nav img {
+  width: 40px;
+}
+
+#check {
+  display: none;
+}
+.checkbtn {
+  margin-right: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+  display: block;
+}
+.nav-menu ul {
+  display: block;
+  position: fixed;
+  top: 55px;
+  left: -108%;
+  background: #1465bb;
+  width: 100%;
+  font-size: 1.4rem;
+}
+.nav-menu ul li {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.nav-menu a {
+  color: #b9ffff;
+}
+.nav-menu ul li:last-child {
+  background: none;
+  padding: 0.5rem;
+}
+#check:checked ~ ul {
+  left: 0;
+  transition: all 0.8s;
+}
+
+/*Aqui comienza ccs de la section */
+section {
+  margin: 3.5px;
+}
+.popular,
+.shonen,
+.romance,
+.isekai {
+  height: 48px;
+  font-family: "Rajdhani";
+  justify-content: center;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #b9ffff;
+  background-image: url("../imgs/f1.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img-sec1,
+.img-sec2,
+.img-sec3,
+.img-sec4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+  gap: 30px;
+}
+/* Ccs para las cards de la Section */
+/* Ccs para las cards de la Section Mangas Populares */
+/* Ccs para las card-popular*/
+.card-popular,
+.card-popular1,
+.card-popular2,
+.card-popular3,
+.card-shonen,
+.card-shonen1,
+.card-shonen2,
+.card-shonen3,
+.card-romance,
+.card-romance1,
+.card-romance2,
+.card-romance3,
+.card-isekai,
+.card-isekai1,
+.card-isekai2,
+.card-isekai3 {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 200px;
+  background-size: contain;
+  justify-content: center;
+  cursor: pointer;
+}
+.card-popular,
+.card-popular1,
+.card-popular2,
+.card-popular3,
+.card-shonen,
+.card-shonen1,
+.card-shonen2,
+.card-shonen3,
+.card-romance,
+.card-romance1,
+.card-romance2,
+.card-romance3,
+.card-isekai,
+.card-isekai1,
+.card-isekai2,
+.card-isekai3 {
+  background-image: url("../imgs/onePiece.jpg");
+  transition: background-image 0.5s;
+  border: solid 2px #1465bb;
+}
+.card-popular:hover,
+.card-popular1:hover,
+.card-popular2:hover,
+.card-popular3:hover,
+.card-shonen:hover,
+.card-shonen1:hover,
+.card-shonen2:hover,
+.card-shonen3:hover,
+.card-romance:hover,
+.card-romance1:hover,
+.card-romance2:hover,
+.card-romance3:hover,
+.card-isekai:hover,
+.card-isekai1:hover,
+.card-isekai2:hover,
+.card-isekai3:hover {
+  filter: saturate(250%);
+}
+.card-popular1 {
+  background-image: url("../imgs/jujutsu.jpg");
+}
+.card-popular2 {
+  background-image: url("../imgs/kitmetsu.jpg");
+}
+.card-popular3 {
+  background-image: url("../imgs/pokemonEspecial.jpg");
+}
+.card-header,
+.card-header1,
+.card-header2,
+.card-header3 {
+  display: flex;
+  flex-direction: column;
+  color: #b9ffff;
+  background-color: #021524;
+  flex-basis: 2%;
+  opacity: 0.9;
+}
+.card-body,
+.card-body1,
+.card-body2,
+.card-body3 {
+  flex-grow: 1;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 500;
+}
+.card-footer,
+.card-footer1,
+.card-footer2,
+.card-footer3 {
+  color: #b9ffff;
+  background-color: #021524;
+  flex-basis: 15%;
+  opacity: 0.9;
+  text-align: center;
+}
+/* Ccs para las cards de la Section Mangas Shonen */
+.card-shonen,
+.card-shonen1,
+.card-shonen2,
+.card-shonen3 {
+  background-image: url("../imgs/blue.jpg");
+  border: solid 2px #2196f3;
+}
+.card-shonen1 {
+  background-image: url("../imgs/cultivando.jpg");
+}
+.card-shonen2 {
+  background-image: url("../imgs/iruma.jpg");
+}
+.card-shonen3 {
+  background-image: url("../imgs/entregaDinero.jpg");
+}
+/* Ccs para las cards de la Section Mangas Romance */
+.card-romance,
+.card-romance1,
+.card-romance2,
+.card-romance3 {
+  background-image: url("../imgs/negocioMatrimonial.jpg");
+  border: solid 2px #a469dc;
+}
+.card-romance1 {
+  background-image: url("../imgs/sobreviviendo.jpg");
+}
+.card-romance2 {
+  background-image: url("../imgs/esclavo.jpg");
+}
+.card-romance3 {
+  background-image: url("../imgs/villana.jpg");
+}
+/* Ccs para las cards de la Section Mangas Isekai */
+.card-isekai,
+.card-isekai1,
+.card-isekai2,
+.card-isekai3 {
+  background-image: url("../imgs/rey.jpg");
+  border: solid 2px #0c052d;
+}
+.card-isekai1 {
+  background-image: url("../imgs/tatari.jpg");
+}
+.card-isekai2 {
+  background-image: url("../imgs/yaku.jpg");
+}
+.card-isekai3 {
+  background-image: url("../imgs/pokemonEspecial.jpg");
+}
+/*CCs para seleccionar estrellas de clasificacion en la seccion de manga populares*/
+form p {
+  text-align: center;
+}
+
+form label {
+  font-size: 11px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: white;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  font-family: "Londrina Shadow";
+  font-size: 2rem;
+  align-items: center;
+  color: white;
+  font-weight: 200;
+  gap: 0.5px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.social,
+.copyrigth,
+.address {
+  margin: 5px;
+  color: #021524;
+  font-size: 1.5rem;
+}
+.social-icon {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+}
+.copyrigth {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+  main {
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows:
+      60px
+      300px
+      1fr
+      100px;
+    grid-template-areas:
+      "my-nav my-nav my-nav"
+      "my-header my-header my-header"
+      "my-aside my-section my-section"
+      "my-footer my-footer my-footer";
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .social,
+  .copyrigth,
+  .address {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    color: #021524;
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1001px) {
+  main {
+    grid-template-columns: 200px 1fr 25%;
+    grid-template-rows:
+      300px
+      1fr
+      100px;
+    grid-template-areas:
+      "my-header my-header my-header"
+      "my-nav my-section my-aside"
+      "my-footer my-footer my-footer";
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+  }
+  .logo-nav {
+    padding-top: 10px;
+    display: flex;
+    font-family: "Londrina Shadow";
+    color: white;
+    font-size: 1.8rem;
+    width: 200px;
+    gap: 10px;
+  }
+  .logo-nav img {
+    margin-top: 18px;
+    padding-left: 60px;
+    width: 35px;
+    height: 35px;
+  }
+
+  #check {
+    display: none;
+  }
+  .checkbtn {
+    margin-left: 22px;
+    margin-top: 35px;
+    cursor: pointer;
+    display: block;
+  }
+  .nav-menu ul {
+    display: block;
+    position: relative;
+    top: 38px;
+    left: -180%;
+    background: #1465bb;
+    width: 135px;
+    font-size: 1.4rem;
+    margin-left: -60%;
+  }
+  .nav-menu ul li {
+    padding: 0.5rem;
+    display: flex;
+  }
+  .nav-menu a {
+    color: #b9ffff;
+  }
+  .nav-menu ul li:last-child {
+    background: none;
+    padding: 0.5rem;
+  }
+  #check:checked ~ ul {
+    left: 0;
+    transition: all 0.8s;
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: space-around;
+    margin-left: 200px;
+  }
+  .social,
+  .copyrigth,
+  .address {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    color: #021524;
+    font-size: 1.5rem;
+  }
+  .header1 p {
+    cursor: pointer;
+    max-height: 21px;
+    max-width: 376px;
+    position: relative;
+    animation-name: anuncio;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .header1 p:hover {
+    color: white;
+  }
+  @keyframes anuncio {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 1100px;
+    }
+  }
+}
